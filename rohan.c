@@ -6,7 +6,7 @@
 int main(){
 
     //this is the given array
-    int a[7] = {1,2,3,1,2,1,7};
+    int a[7] = {1,2,3,1,2,3,7};
     int i, j;
 
     //this array stores all unique integers in the given array and their number of occurences
@@ -24,7 +24,7 @@ int main(){
     for (int i = 0; i < 7; i++){
         for (j = 0; j < count; j++)
         {
-            //printf("i = %d j = %d ax[j][0] = %d a[i] = %d\n", i, j,ax[j][0], a[i]);
+            //printf("i = %d j = %d ax[j][0] = %d a[i] = %d\n", i, j,acount[j][0], a[i]);
             if (a[i] == acount[j][0]){
                 acount[j][1]++;
                 temp = 1;
@@ -34,7 +34,7 @@ int main(){
         if (temp == 0){
             acount[j][0] = a[i];
             count++;
-            //printf("j = %d ax[j][0] = %d a[i] = %d count = %d\n",j, ax[j][0], a[i],count);
+            printf("j = %d acount[j][0] = %d a[i] = %d count = %d\n",j, acount[j][0], a[i], count);
         }
         temp = 0;
     }
