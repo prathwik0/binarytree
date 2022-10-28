@@ -36,20 +36,20 @@ int getBalanceFactor(struct Node *n){
     return getHeight(n->left) - getHeight(n->right);
 }
 
-struct Node* clockRotate(struct Node* y){
-    struct Node* x = y->left;
-    struct Node* T2 = x->right;
+struct Node* leftRotate(struct Node* top){
+    struct Node* bot = top->right;
+    struct Node*  = x->right;
 
-    x->right = y;
+    bot->left = top;
     y->left = T2;
 
-    y->height = max(getHeight(y->right), getHeight(y->left)) + 1;
-    x->height = max(getHeight(x->right), getHeight(x->left)) + 1;
+    top->height = max(getHeight(top->right), getHeight(top->left)) + 1;
+    bot->height = max(getHeight(bot->right), getHeight(bot->left)) + 1;
 
-    return x;
+    return bot;
 }    
 
-struct Node* antiRotate(struct Node* x){
+struct Node* Rotate(struct Node* x){
     struct Node* y = x->right;
     struct Node* T2 = y->left;
 
